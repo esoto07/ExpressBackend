@@ -11,15 +11,12 @@ import {
 
 const router = express.Router();
 
-// Client
-router.route('/').get(getClients);
-router.route('/:id').get(getClientById);
-router.route('/').post(newClient);
-
-// Address
 router.route('/address').get(getAddresses);
 router.route('/address').post(newAddress);
 router.route('/address/:id').get(getAddressByClientId);
 router.route('/address/:id').delete(deleteAddress);
+router.route('/:id').get(getClientById);
+router.route('/').post(newClient);
+router.route('/').get(getClients);
 
 export default router
